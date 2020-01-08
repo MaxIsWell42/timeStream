@@ -3,5 +3,5 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("Timeline homepage")
+    return render(request, 'timeline/index.html')
 
