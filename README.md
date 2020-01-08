@@ -18,17 +18,17 @@ Start by installing virtualenv if you don't have it:
 
 Once installed access the project folder:
 
-    cd django_flexpoints_store
+    cd timeStream
 
 
 Create a virtual environment:
 
-    virtualenv venv
+    virtualenv timeStream
 
 
 Enable the virtual environment:
 
-    source venv/bin/activate
+    source timeStream/bin/activate
 
 
 Install the python dependencies on the virtual environment:
@@ -38,7 +38,9 @@ Install the python dependencies on the virtual environment:
 
 <h2> HOW TO RUN SERVER </h2>
 (Heroku):
-==>"heroku open"
+
+    heroku open
 
 <h2> (Local Host): </h2>
-==>"python3 manage.py runserver"
+
+    python3 manage.py runserver
