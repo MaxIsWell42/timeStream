@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'contractor/main.css' %}">
+
+    {% if title %}
+        <title>Timeline: {{ title }}</title>
+    {% else%}
+        <title>TimeStream</title>
+    {% endif %}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<!-- Source: https://bootsnipp.com/snippets/45ngx -->
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-sm-4 sidebar1">
+                <div class="logo img-fluid">
+                    <img src="https://i.redd.it/71v6dzamepg11.jpg" class="img-responsive center-block" alt="Logo" width="150">
+                </div>
+                <br>
+                <div class="left-navigation">
+                    <ul class="list">
+                        <h3><strong>TimeStream</strong></h3>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'profile' %}">Profile</a></li>
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'register' %}">Register</a></li>
+                        {% endif %}
+                        <li><a href="#">Create a timeline!</a></li>
+                        <li><a href="#">View timelines</a></li>
+                            <!-- <li class="list">
+                                <div class="dropdown">
+                                    <i class="fa fa-list" aria-hidden="true"></i>My Wishlist <i class="fa fa-plus pull-right" aria-hidden="true"></i>
+                                </div>
+                                <ul class="submenu hide">
+                                    <li>The Sealed Nectar</li>
+                                    <li>Pride and Prejudice</li>
+                                    <li>HTML5 for Web Designers</li>
+                                    <li>The 100, Michael H Heart</li>
+                                </ul>
+                            </li> -->
+                    </ul>
+
+                    <br>
+
+                    <ul class="list">
+                        <h5><strong></strong></h5>
+                        <!-- Todo: Fix this so it isn't a static url -->
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Affiliates</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-8 main-content">
+            <!--Main content code to be written here --> 
+            <main role="main" class="container">
+                <div class="container">
+                        <div class="col-md-8">
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
