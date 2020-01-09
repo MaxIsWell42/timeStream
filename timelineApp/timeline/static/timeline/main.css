@@ -1,0 +1,102 @@
+.sidebar1 {
+    background: #F17153;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#F17153, #F58D63, #f1ab53);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#F17153, #F58D63, #f1ab53);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#F17153, #F58D63, #f1ab53);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#F17153, #F58D63, #f1ab53);
+    /* Standard syntax */
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+.logo {
+    max-height: 130px;
+}
+
+.logo>img {
+    margin-top: 30px;
+    padding: 3px;
+    border: 3px solid white;
+    border-radius: 100%;
+}
+
+.list {
+    color: #fff;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.list::first-line {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.list> li, h5 {
+    padding: 5px 0px 5px 40px;
+}
+
+.list>li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-left: 5px solid white;
+    color: white;
+    font-weight: bolder;
+    padding-left: 35px;
+}
+
+.main-content {
+    text-align:center;
+}
+
+.dropdown .fa-plus
+{ border:1px solid #848FD8;
+padding:4px;
+margin-top:-2px;
+margin-right:0px;
+}
+
+.list {
+    padding-left:20px;
+}
+
+.dropdown {
+    margin-left:-15px;
+}
+
+.submenu > li { 
+    display:list-item;
+    list-style-type: square;
+
+}
+
+.submenu {
+    padding-left:12px;
+}
+
+.submenu > li:hover {
+    color:blue;
+}
+
+.category::before, .category::after, .submenu::after {
+    content:" ";
+    white-space:pre;
+}
+
+i.fa.fa-circle-thin {
+    color:#00ff74;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}

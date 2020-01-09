@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'contractor/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'timeline/main.css' %}">
 
     {% if title %}
         <title>Timeline: {{ title }}</title>
@@ -29,9 +29,9 @@
                     <img src="https://i.redd.it/71v6dzamepg11.jpg" class="img-responsive center-block" alt="Logo" width="150">
                 </div>
                 <br>
-                <div class="left-navigation">
+                <div class="right-navigation">
                     <ul class="list">
-                        <h3><strong>TimeStream</strong></h3>
+                        <h3><strong>Username</strong></h3>
                         <li><a href="{% url 'index' %}">Home</a></li>
                         {% if user.is_authenticated %}
                             <li><a href="{% url 'profile' %}">Profile</a></li>
@@ -40,7 +40,7 @@
                             <li><a href="{% url 'login' %}">Login</a></li>
                             <li><a href="{% url 'register' %}">Register</a></li>
                         {% endif %}
-                        <li><a href="#">Create a timeline!</a></li>
+                        <li><a href="timeline.html">Create a timeline!</a></li>
                         <li><a href="#">View timelines</a></li>
                             <!-- <li class="list">
                                 <div class="dropdown">

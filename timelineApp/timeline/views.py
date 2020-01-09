@@ -6,15 +6,26 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
 
 
+timelines = [
+    {
+    'title': 'Summer Vacation',
+    'description': 'Summer vacation of 2019, Malibu',
+    'events': '5',
+    'pub_date': 'September 23rd, 2019',
+    },
+]
+
+
 def index(request):
     return render(request, 'timeline/home.html')
 
-class TimelineListView(ListView):
-    model = Timeline
-    template_name = 'Timelines/home.html' # <app>/<model>_<viewtype>.html
-    context_object_name = 'Timelines'
-    # ordering = ['-date_posted'] # to order from newest to oldest
-    paginate_by = 5
+# Working on community timelines
+# class TimelineListView(ListView):
+#     model = Timeline
+#     template_name = 'Timelines/home.html' # <app>/<model>_<viewtype>.html
+#     context_object_name = 'Timelines'
+#     # ordering = ['-date_posted'] # to order from newest to oldest
+#     paginate_by = 5
 
 class UserTimelineListView(ListView):
     model = Timeline

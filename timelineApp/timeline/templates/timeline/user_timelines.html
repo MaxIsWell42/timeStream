@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <!-- meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <title></title>
+</head>
+<body>
+
+<!-- Cards for each timeline in timelines  -->
+{% for timeline in timelines %}
+    <div class="row">
+        <div class="col s12 m7">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                    <span class="card-title">{% timeline.title %}</span>
+                    <p class="text-muted"> </p>
+                </div>
+                <div class="card-content">
+                    <p>{% timeline.description %}</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+<!-- Create new timeline card -->
+<div class="row">
+        <div class="col s12 m7">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/sample-1.jpg">
+                </div>
+                <div class="card-action">
+                    <a href="#">Create a new timeline!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
