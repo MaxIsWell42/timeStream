@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="{% static 'timeline/main.css' %}">
 
     {% if title %}
@@ -16,9 +17,7 @@
         <title>TimeStream</title>
     {% endif %}
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 </head>
 <!-- Source: https://bootsnipp.com/snippets/45ngx -->
 <body>
@@ -40,8 +39,8 @@
                             <li><a href="{% url 'login' %}">Login</a></li>
                             <li><a href="{% url 'register' %}">Register</a></li>
                         {% endif %}
-                        <li><a href="timeline.html">Create a timeline!</a></li>
-                        <li><a href="#">View timelines</a></li>
+                        <li><a href="{% url 'new-timeline' %}">Create a timeline!</a></li>
+                        <li><a href="{% url 'user-timelines' %}">View timelines</a></li>
                             <!-- <li class="list">
                                 <div class="dropdown">
                                     <i class="fa fa-list" aria-hidden="true"></i>My Wishlist <i class="fa fa-plus pull-right" aria-hidden="true"></i>

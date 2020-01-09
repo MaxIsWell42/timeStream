@@ -12,7 +12,19 @@ timelines = [
     'description': 'Summer vacation of 2019, Malibu',
     'events': '5',
     'pub_date': 'September 23rd, 2019',
+    'author': 'maxfinn',
     },
+]
+
+events = [
+    {
+        'title': 'Sandals resort',
+        'description': 'When we went to Sandals and spent a week on the beach!'
+    },
+    {
+        'title': 'Learning to dance with fire',
+        'description': 'Hawaiian flame juggling lessons, set my hair on fire Michael Jackson style'
+    }
 ]
 
 
@@ -30,7 +42,7 @@ def index(request):
 class UserTimelineListView(ListView):
     model = Timeline
     template_name = 'timeline/user_timelines.html' # <app>/<model>_<viewtype>.html
-    context_object_name = 'Timelines'
+    context = 'timelines'
     # ordering = ['-date_posted'] # to order from newest to oldest
     paginate_by = 5
 
@@ -40,6 +52,7 @@ class UserTimelineListView(ListView):
 
 class TimelineDetailView(DetailView):
     model = Timeline
+    e = Event.objects.get(Event.timeline_id)
 
 class TimelineCreateView(LoginRequiredMixin, CreateView):
     model = Timeline
