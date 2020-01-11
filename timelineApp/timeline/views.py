@@ -52,7 +52,10 @@ class UserTimelineListView(ListView):
 
 class TimelineDetailView(DetailView):
     model = Timeline
-    e = Event.objects.get(Event.timeline_id)
+    
+    # Trying to link event ids with timeline ids in a OneToMany interaction
+    # e = Event.objects.get(Event.timeline_id)
+    #timeline_events = set([e.publisher_id for event in Events])
 
 class TimelineCreateView(LoginRequiredMixin, CreateView):
     model = Timeline

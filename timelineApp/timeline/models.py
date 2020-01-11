@@ -9,6 +9,7 @@ class Timeline(models.Model):
     # events = models.ManyToOneRel(Event, on_delete=models.CASCADE)
     tagged_users = models.IntegerField(default=0)
     pub_date = models.DateTimeField('Date published', default=timezone.now)
+    #timeline_id = models.ForeignKey(Timeline, default=0)
 
     def __str__(self):
         return self.title
@@ -19,7 +20,7 @@ class Event(models.Model):
     description = models.CharField(max_length=200)
     date = models.DateTimeField('Date', default=timezone.now)
     image = models.ImageField(upload_to='media/', default="")
-    timeline_id = models.ForeignKey(Timeline, on_delete=models.CASCADE)
+    timeline_id = models.ForeignKey(Timeline, on_delete=models.CASCADE, default=0)
     
     def __str__(self):
         return self.title
