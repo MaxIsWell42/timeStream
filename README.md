@@ -1,4 +1,4 @@
-<h1>timeStream</h1>
+<h1>TimeStream (WIP)</h1>
 <p>A timeline app with full login functionality and the ability to make and store events to a timeline with automatic placement based on date</p>
 
 [Live Deployment!]()
